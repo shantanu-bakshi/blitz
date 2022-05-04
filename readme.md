@@ -9,7 +9,7 @@ https://blitz-261.herokuapp.com/
 ## Project Setup
 
 1. Clone this repository.<br/>
-   `git clone https://github.com/bhawnachopra2002/ComputerNetworksProject.git`
+   `git clone https://github.com/shantanu-bakshi/blitz.git`
 2. Make sure Node.js and Node.js are installed else install it.<br/>
 3. Open up your project directory in an IDE.<br/>
 4. Install the required libraries.<br/>
