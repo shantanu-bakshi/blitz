@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blitz</title>
+        <link rel="icon" href="/img/thunderbolt.png">
+        <link rel="stylesheet" href="/styling/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Montserrat:wght@500&family=Poppins:wght@100&family=Quicksand:wght@300&display=swap" rel="stylesheet">    
+     </head>
+    <body>
+        <div class="maincontent">
+        <div class="header-bar" style="display: flex; padding-top: 9px; align-content: center; justify-content: center;  background-color: #7289da; color: aliceblue;font-family: 'Montserrat', sans-serif;font-weight: 900; height: 45px;"><p>Welcome to blitz</p></Welcome></div>
+        <div class="chat">
+            <div id= "sidebar" class="sidebarClass">
+
+            </div>
+            <div class="messagesClass">
+                <div id="messages" class="chatmessagesClass"></div>
+
+                <div class="messageform">
+                    <div style="width: 97%;">
+                    <form id="myform">
+                        <div style="background-color: aliceblue;display: flex; padding-right:10px ; margin-right: 16px; width: 100%; border-radius: 10px;  ">
+                        <input name="message" placeholder="Message" required autocomplete="off">
+                        <label class="awesome" for="upload" style="padding-top: 8px;border-bottom: 0px;">
+                            <img src="img/upload.png" style="height: 26px;"/>
+                          </label>                        
+                        <input name="fileholder" type="file" id="upload" accept=".jpg,.jpeg,.png,.pdf,.docx"/> 
+                         </div>
+                        <div>
+                        <button><img src="img/paper-plane.png" style="height:20px;" ></button>
+                        </div>
+                    </form>
+                </div>
+                    <button id="sl"><img src="img/map.png" style="height: 22px;"></button>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+        <script id="message-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="mn">~ {{username}}</span>
+                    <span class="mm">{{createdAt}}</span>
+                </p>
+                <p>{{message}}</p>
+            </div>
+        </script>
+
+        <script id="file-message-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="mn">~ {{username}}</span>
+                    <span class="mm">{{createdAt}}</span>
+                    <!-- <a href={{url}}>link</a> -->
+                </p>
+                <img src={{url}}/>
+            </div>
+        </script>
+
+        <script id="file-message-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="mn">~ {{username}}</span>
+                    <span class="mm">{{createdAt}}</span>
+                </p>
+                <img src={{url}}>{{message}}</p>
+            </div>
+        </script>
+
+        <script id="location-message-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="mn">~ {{username}}</span>
+                    <span class="mm">{{createdAt}}</span>
+                </p>
+                <p><a href="{{url}}" target="_blank">My current location</a></p>
+            </div>
+        </script>
+
+        <script id="sidebar-template" type="text/html">
+            <h2 class="rt">Room no : {{room}}</h2>
+            <h2 class="lt">users</h2>
+            <ul class="userslist">
+                {{#users}}
+                    <li>{{username}}</li>
+                {{/users}}
+            </ul>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/scripts/handler.js"></script>
+    </body>
+</html> 
