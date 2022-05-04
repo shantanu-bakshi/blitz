@@ -7,8 +7,8 @@
     "node":"16.13.1"
   },
   "scripts": {
-    "start": "nodemon src/app.js",
-    "dev": "nodemon src/app.js"
+    "start": "node src/app.js",
+    "dev": "node src/app.js"
   },
   "author": "Shantanu bakshi",
   "license": "ISC",
